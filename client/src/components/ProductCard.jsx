@@ -1,14 +1,36 @@
 function ProductCard({ product, onAddToCart }) {
+
   return (
     <div className="product-card">
-      <h3>{product.name}</h3>
-      <p className="price">R$ {product.price}</p>
-      <button
-        className="button-primary"
-        onClick={() => onAddToCart(product)}
-      >
-        Adicionar ao Carrinho
-      </button>
+
+      <div className="product-image">
+
+        <img
+          src={product.image}
+          alt={product.name}
+        />
+
+      </div>
+
+      <div className="product-info">
+
+        <h3>
+          {product.name}
+        </h3>
+
+        <p className="price">
+          R$ {product.price}
+        </p>
+
+        <button
+          className="button-primary"
+          onClick={() => onAddToCart(product)}
+        >
+          Adicionar ao Carrinho
+        </button>
+
+      </div>
+
     </div>
   )
 }

@@ -1,9 +1,10 @@
 import { useState } from "react"
-import "./styles.css"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
+import "./styles.css"
 
 function App() {
+
   const [cart, setCart] = useState([])
 
   function handleAddToCart(product) {
@@ -11,10 +12,15 @@ function App() {
   }
 
   return (
-    <>
+    <div className="app">
+
       <Navbar cartCount={cart.length} />
-      <Home onAddToCart={handleAddToCart} />
-    </>
+
+      <main className="main">
+        <Home onAddToCart={handleAddToCart} />
+      </main>
+
+    </div>
   )
 }
 
